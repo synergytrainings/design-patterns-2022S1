@@ -1,0 +1,6 @@
+db.host:host
+db.port: port
+db.db_name: dbName
+db.user: userName
+db.password:password
+
