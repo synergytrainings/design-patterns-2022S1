@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * @author harut.arakelyan
  *
- * Let's say we have some configurations which we should load from somewhere for the Application and we must have only one instance.
+ * Let's say we should load configurations from somewhere for the Application and we must have only one instance.
  * This implementation way guarantees lazy initialization and is thread-safe for a single instance. It avoids reflection
  */
 public class AppConfiguration {

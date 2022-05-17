@@ -1,4 +1,4 @@
-package synisys.trining.designPatterns;
+package synisys.training;
 
 import synisys.training.designPatterns.singleton.AppConfiguration;
 
