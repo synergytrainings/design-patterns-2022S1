@@ -5,40 +5,35 @@ import com.synisys.patterns.Singleton.helper.Config;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.Properties;
+/**
+ * Serializable Singleton impl
+ */
+public class RabbitConfig implements Serializable {
+    private static final long serialVersionUID = 2132854814575269211L;
 
-public class RabbitConfig {
     // Rabbit configs
-    public String MESSAGE_COUNT;
+    public final String MESSAGE_COUNT;
 
-    private static final RabbitConfig instance;
+    private  RabbitConfig() {
+        Config config = new Config("/rabbit_config.json");
 
-    static {
-        try{
-            instance = new RabbitConfig();
-        }catch(Exception e){
-            throw new RuntimeException("Exception occured in creating singleton instance");
-        }
+        // Database Config Parameters
+        MESSAGE_COUNT = config.getProperty("max.message.count");
     }
 
-    public static RabbitConfig getInstance() {
-        return instance;
+    private static class SingletonHelper{
+        private static final RabbitConfig instance = new RabbitConfig();
     }
 
-    private RabbitConfig() {
-        Properties properties = new Properties();
-        try {
-            InputStream inputStream = getClass().getResourceAsStream("/rabbit_config.json");
-            //loading properties from a property file
-            properties.load(inputStream);
-            MESSAGE_COUNT = properties.getProperty("max.message.count");
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+    public static RabbitConfig getInstance(){
+        return SingletonHelper.instance;
     }
+
+    protected Object readResolve() {
+        return getInstance();
+    }
+
 }
 

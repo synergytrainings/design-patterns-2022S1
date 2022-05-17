@@ -2,8 +2,11 @@ package com.synisys.patterns.Singleton;
 
 import com.synisys.patterns.Singleton.helper.Config;
 
-public class DbConfig {
+/*
+ * Lazy init
+ */
 
+public class DbConfig {
     // DB configs
     public final String DB_HOST;
     public final String DB_PORT;
@@ -11,9 +14,12 @@ public class DbConfig {
     public final String DB_USER;
     public final String DB_PASSWORD;
 
-    private static final DbConfig instance = new DbConfig();
+    private static DbConfig instance;
 
     public static DbConfig config() {
+        if (instance == null) {
+            instance = new DbConfig();
+        }
         return instance;
     }
 

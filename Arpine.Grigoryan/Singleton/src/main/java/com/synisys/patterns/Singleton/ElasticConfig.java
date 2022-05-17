@@ -2,24 +2,38 @@ package com.synisys.patterns.Singleton;
 
 import com.synisys.patterns.Singleton.helper.Config;
 
-public class ElasticConfig {
-    public final String RESPONSE_TIMOUT;
-    public final String CACHE_DURATION;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
-    private static final ElasticConfig instance = new ElasticConfig();
+/**
+ * Singleton impl with static block
+ */
+public class ElasticConfig{
+    public  String RESPONSE_TIMOUT;
+    public  String CACHE_DURATION;
+    private static final ElasticConfig instance;
 
-    public static ElasticConfig config() {
+    static {
+        try{
+            instance = new ElasticConfig();
+        }catch(IOException e){
+            throw new RuntimeException("Exception occurred in creating singleton instance");
+        }
+    }
+
+    public static ElasticConfig getInstance() {
         return instance;
     }
 
-    private ElasticConfig() {
-        Config config = new Config("/elastic_config.json");
-        RESPONSE_TIMOUT = config.getProperty("response.Timeout");
-        CACHE_DURATION = config.getProperty("cache.duration");
-
-
+    private ElasticConfig() throws IOException {
+        Properties properties = new Properties();
+        //invalid file name
+        InputStream inputStream = getClass().getResourceAsStream("/elastic1_config.json");
+        //loading properties from a property file or other location
+        properties.load(inputStream);
+        RESPONSE_TIMOUT = properties.getProperty("response.Timeout");
+        CACHE_DURATION = properties.getProperty("cache.duration");
     }
-
-
 }
 
