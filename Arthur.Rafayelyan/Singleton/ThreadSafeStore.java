@@ -23,7 +23,8 @@ public class ThreadSafeStore {
      * */
     public static synchronized ThreadSafeStore getInstance() {
         if (instance == null) {
-            return new ThreadSafeStore();
+            instance = new ThreadSafeStore()
+            return instance;
         }
         return instance;
     }
@@ -32,16 +33,17 @@ public class ThreadSafeStore {
      * getInstance using double-check locking
      * This approach not working with java 1.4 or below
      * */
-    /*public static ThreadSafeStore getInstance() {
+    public static ThreadSafeStore getInstance() {
         if (instance == null) {
             synchronized (ThreadSafeStore.class) {
                 if (instance == null) {
-                    return new ThreadSafeStore();
+                    instance = new ThreadSafeStore()
+                    return instance;
                 }
             }
         }
         return instance;
-    }*/
+    }
 
     public List<String> getItems() {
         return items;
