@@ -13,7 +13,7 @@ public class Cell {
 		this.hasCapsule = hasCapsule;
 	}
 
-	// The two methods bellow have the same signature, but return different objects
+	// The two methods below have the same signature, but return different objects
 	// This cannot be done with constructors
 	static Cell createProkaryoticCell(double size, boolean hasCapsule) {
 		return new Cell(false, size, DNAFormEnum.CIRCULAR, true, hasCapsule);

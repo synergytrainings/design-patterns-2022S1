@@ -9,7 +9,7 @@ public class RRCache {
 
 	public static RRCache getInstance() {
 		if (uniqueInstance == null) {
-			synchronized (Mars.class) {
+			synchronized (RRCache.class) {
 				if(uniqueInstance == null) {
 					uniqueInstance = new RRCache();
 				}
