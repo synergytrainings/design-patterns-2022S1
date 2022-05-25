@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class AsposePdfLicenseTest {
 
     @Test
-    public void testEagerInitializedStore() {
+    public void testSingleton() {
         // Config instance is created and the font DIR is set to "/fonts"
         PDFExport pdfExport = new PDFExport();
 
