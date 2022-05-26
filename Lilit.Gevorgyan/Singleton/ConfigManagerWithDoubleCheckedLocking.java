@@ -4,7 +4,7 @@ import java.util.Map;
 
 class ConfigManagerWithDoubleCheckedLocking {
 
-    public volatile static ConfigManagerWithDoubleCheckedLocking instance;
+    private volatile static ConfigManagerWithDoubleCheckedLocking instance;
 
     private Map<String, String> configMap = new HashMap<String, String>() {{
         put("host", "internal.db");
