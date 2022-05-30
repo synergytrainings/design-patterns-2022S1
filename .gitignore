@@ -1,4 +1,6 @@
 # Compiled class file
+out
+target
 *.class
 .DS_Store
 
