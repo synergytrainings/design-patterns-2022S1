@@ -4,6 +4,8 @@ import synisys.training.designPatterns.abstractFactory.api.Application;
 import synisys.training.designPatterns.abstractFactory.api.Beneficiary;
 import synisys.training.designPatterns.abstractFactory.api.Program;
 
+import java.util.Map;
+
 /**
  * @author harut.arakelyan
  */
@@ -19,8 +21,10 @@ public class EducationApplication extends Application {
     }
 
     @Override
-    public void pay() {
-      //check verification and call paymentService to pay
-        System.out.println("Send School pay request");
+    public Map<String, String> providePaymentInfo() {
+        //it will be get from Beneficiary and Program
+        return null;
     }
+
+
 }

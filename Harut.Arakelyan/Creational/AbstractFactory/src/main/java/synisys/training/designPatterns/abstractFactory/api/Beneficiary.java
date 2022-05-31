@@ -6,6 +6,5 @@ package synisys.training.designPatterns.abstractFactory.api;
 public interface Beneficiary {
     String getBeneficiaryInfo();
     String getBankAccount();
-    Boolean verifyBeforePayment();
     String getContactNumber();
 }

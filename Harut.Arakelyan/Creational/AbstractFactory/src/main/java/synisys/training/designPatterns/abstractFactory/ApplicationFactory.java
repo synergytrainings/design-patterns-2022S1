@@ -1,9 +1,9 @@
-package synisys.training.designPatterns.abstractFactory.impl;
+package synisys.training.designPatterns.abstractFactory;
 
 import synisys.training.designPatterns.abstractFactory.api.Application;
-
-import java.util.HashMap;
-import java.util.Map;
+import synisys.training.designPatterns.abstractFactory.impl.EducationApplication;
+import synisys.training.designPatterns.abstractFactory.impl.HealthyApplication;
+import synisys.training.designPatterns.abstractFactory.impl.SWApplication;
 
 /**
  * @author harut.arakelyan

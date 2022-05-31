@@ -1,6 +1,7 @@
 package synisys.training.designPatterns.abstractFactory.api;
 
-import java.math.BigDecimal;
+
+import java.util.Map;
 
 /**
  * @author harut.arakelyan
@@ -8,11 +9,7 @@ import java.math.BigDecimal;
 public abstract class Application {
     public abstract Beneficiary defineBeneficiary();
     public abstract Program defineProgram();
-    public boolean registerApplication(){
-        // Send Program and Beneficiary info to external API
-        return Math.round(Math.random()*100)%2 == 0;
-    }
 
-    public abstract void pay();
+    public abstract Map<String, String> providePaymentInfo();
 
 }

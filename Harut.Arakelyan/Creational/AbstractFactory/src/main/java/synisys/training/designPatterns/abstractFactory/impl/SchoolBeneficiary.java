@@ -17,12 +17,6 @@ public class SchoolBeneficiary implements Beneficiary {
     }
 
     @Override
-    public Boolean verifyBeforePayment() {
-        //school
-        return true;
-    }
-
-    @Override
     public String getContactNumber() {
         return "+37410000000";
     }

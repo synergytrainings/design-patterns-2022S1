@@ -17,12 +17,6 @@ public class ChildBeneficiary implements Beneficiary {
     }
 
     @Override
-    public Boolean verifyBeforePayment() {
-        //call external api for verification
-        return Math.round(Math.random()*100)%2 == 0;
-    }
-
-    @Override
     public String getContactNumber() {
         return "+374777777777";
     }
