@@ -7,7 +7,7 @@ import builder.network.layers.LSTMLayer;
 import builder.network.layers.OutputLayer;
 import builder.network.lossfunction.LossFunctions;
 
-public class EntryPoint {
+public class BuilderPattern {
 
 	public static void main(String[] args) {
 

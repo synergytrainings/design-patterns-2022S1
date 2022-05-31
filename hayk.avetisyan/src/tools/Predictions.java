@@ -1,4 +1,4 @@
-package builder.network;
+package tools;
 
 public class Predictions {
 

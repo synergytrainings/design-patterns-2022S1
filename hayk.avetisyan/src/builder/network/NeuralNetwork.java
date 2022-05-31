@@ -2,6 +2,7 @@ package builder.network;
 
 import builder.network.layers.Layer;
 import builder.network.layers.OutputLayer;
+import tools.Predictions;
 
 import java.util.ArrayList;
 import java.util.List;

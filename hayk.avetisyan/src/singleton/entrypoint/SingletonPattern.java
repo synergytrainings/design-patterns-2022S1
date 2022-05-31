@@ -1,4 +1,4 @@
-package singleton;
+package singleton.entrypoint;
 
 import singleton.game.Game;
 import singleton.game.GameType;
@@ -7,7 +7,7 @@ import singleton.storage.StorageProvider;
 
 import java.util.Scanner;
 
-public class EntryPoint {
+public class SingletonPattern {
 
 	public static void main(String[] args) {
 

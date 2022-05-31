@@ -1,6 +1,6 @@
 package builder.network.layers;
 
-import builder.network.Predictions;
+import tools.Predictions;
 import builder.network.activation.ActivationFunction;
 import builder.network.lossfunction.LossFunction;
 import builder.network.lossfunction.LossFunctions;
