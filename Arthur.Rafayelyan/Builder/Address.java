@@ -1,4 +1,4 @@
-package com.company.builder.person;
+package Builder;
 
 import java.util.Objects;
 

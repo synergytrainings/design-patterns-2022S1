@@ -1,4 +1,4 @@
-package com.company.builder.student;
+package Builder;
 
 public class Student {
     private final int id;

@@ -1,4 +1,6 @@
-package com.company.builder.student;
+package Builder.advanced;
+
+import Builder.Student;
 
 public class StudentStepBuilder {
     public static IdFiled newBuilder() {

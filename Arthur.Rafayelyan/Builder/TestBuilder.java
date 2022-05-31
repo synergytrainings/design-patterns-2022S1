@@ -1,10 +1,9 @@
-package com.company.builder.person.traditional;
+package Builder;
 
-import com.company.builder.person.Address;
-import com.company.builder.person.Person;
-import com.company.builder.person.advanced.AdvancedPersonBuilder;
-import com.company.builder.student.Student;
-import com.company.builder.student.StudentStepBuilder;
+import Builder.advanced.AdvancedPersonBuilder;
+import Builder.advanced.StudentStepBuilder;
+import Builder.traditional.AddressBuilder;
+import Builder.traditional.PersonBuilder;
 
 public class TestBuilder {
     public static void main(String[] args) {

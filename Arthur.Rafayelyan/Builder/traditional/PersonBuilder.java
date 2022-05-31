@@ -1,7 +1,7 @@
-package com.company.builder.person.traditional;
+package Builder.traditional;
 
-import com.company.builder.person.Address;
-import com.company.builder.person.Person;
+import Builder.Address;
+import Builder.Person;
 
 public class PersonBuilder {
     private String salutation;

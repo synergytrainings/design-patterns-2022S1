@@ -1,6 +1,6 @@
-package com.company.builder.person.traditional;
+package Builder.traditional;
 
-import com.company.builder.person.Address;
+import Builder.Address;
 
 public class AddressBuilder {
     private String street;

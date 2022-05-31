@@ -1,7 +1,7 @@
-package com.company.builder.person.advanced;
+package Builder.advanced;
 
-import com.company.builder.person.Address;
-import com.company.builder.person.Person;
+import Builder.Address;
+import Builder.Person;
 
 import java.util.function.Consumer;
 
