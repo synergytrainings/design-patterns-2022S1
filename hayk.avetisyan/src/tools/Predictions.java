@@ -20,7 +20,7 @@ public class Predictions {
 		}
 	}
 
-	public static void checkGraterThan(int number, int target) {
+	public static void checkGraterThan(long number, long target) {
 		if (number <= target) {
 			throw new IllegalStateException("The given number is not greater than the target one.");
 		}
