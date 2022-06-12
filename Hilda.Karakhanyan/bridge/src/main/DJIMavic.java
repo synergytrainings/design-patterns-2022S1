@@ -2,18 +2,11 @@ package main;
 
 public class DJIMavic extends DJIDrone {
 
-    public boolean isObstacleRecognitionOn() {
-        return obstacleRecognitionOn;
-    }
-
-    public void setObstacleRecognitionOn(boolean obstacleRecognitionOn) {
-        this.obstacleRecognitionOn = obstacleRecognitionOn;
-    }
-
     private boolean obstacleRecognitionOn;
 
     public DJIMavic(RemoteController remoteController) {
         super(remoteController);
+        setMaxHeight(20);
     }
 
     @Override
@@ -48,6 +41,14 @@ public class DJIMavic extends DJIDrone {
             setyCoordinate(remoteController.moveDown(getyCoordinate()));
         }
         System.out.println("DJI Mavic returned");
+    }
+
+    public boolean isObstacleRecognitionOn() {
+        return obstacleRecognitionOn;
+    }
+
+    public void setObstacleRecognitionOn(boolean obstacleRecognitionOn) {
+        this.obstacleRecognitionOn = obstacleRecognitionOn;
     }
 
 }

@@ -1,7 +1,7 @@
 package main;
 
 public class RCWithVoiceControl implements RemoteController {
-    private String language;
+    private String language = "english";
 
     public String getLanguage() {
         return language;

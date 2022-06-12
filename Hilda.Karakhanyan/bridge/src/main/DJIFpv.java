@@ -6,7 +6,7 @@ public class DJIFpv extends DJIDrone {
 
     public DJIFpv(RemoteController remoteController) {
         super(remoteController);
-        setMaxHeight(1000);
+        setMaxHeight(20);
     }
 
     @Override
@@ -28,16 +28,15 @@ public class DJIFpv extends DJIDrone {
         while (getyCoordinate() < getMaxHeight()) {
             setyCoordinate(remoteController.moveUp(getyCoordinate()));
         }
-        while (getxCoordinate() < length) {
+        while (getxCoordinate() > -length) {
             setxCoordinate(remoteController.moveLeft(getxCoordinate()));
         }
-        while (getxCoordinate() > -length) {
+        while (getxCoordinate() <  length) {
             setxCoordinate(remoteController.moveRight(getxCoordinate()));
         }
-        while (getxCoordinate() < 0) {
+        while (getxCoordinate() > 0) {
             setxCoordinate(remoteController.moveLeft(getxCoordinate()));
         }
-        System.out.println("DJI FPV is shooting from the highest point");
         while (getyCoordinate() > 0) {
             setyCoordinate(remoteController.moveDown(getyCoordinate()));
         }
