@@ -40,7 +40,7 @@ public class TicketBuilderTest {
     public void testTicketBuilderException() {
         Ticket.TicketBuilder storyBuilder = new Ticket.TicketBuilder();
 
-        Ticket story = storyBuilder.story()
+        storyBuilder.story()
                 .sprint("Azhdahak")
                 .build();
     }
