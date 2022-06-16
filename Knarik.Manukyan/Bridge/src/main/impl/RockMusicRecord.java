@@ -1,4 +1,9 @@
-public class RockMusicRecord extends MusicRecord{
+package main.impl;
+
+import main.api.MusicRecord;
+import main.api.Performer;
+
+public class RockMusicRecord extends MusicRecord {
 	String producer;
 	String album;
 

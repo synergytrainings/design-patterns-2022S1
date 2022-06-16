@@ -1,3 +1,8 @@
+package main.impl;
+
+import main.api.Genre;
+import main.api.Performer;
+
 public class Artist implements Performer {
 	Genre genre;
 	String name;
@@ -27,6 +32,3 @@ public class Artist implements Performer {
 	}
 }
 
-enum MusicalInstrument {
-	GUITAR, PIANO, BASS, DRUMS, VIOLIN, VIOLA
-}

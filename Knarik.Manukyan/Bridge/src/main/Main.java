@@ -1,3 +1,8 @@
+package main;
+
+import main.api.Genre;
+import main.impl.*;
+
 import java.util.Arrays;
 
 public class Main {

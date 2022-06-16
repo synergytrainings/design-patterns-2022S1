@@ -1,3 +1,5 @@
+package main.api;
+
 public interface Performer {
 	String getName();
 
@@ -5,8 +7,4 @@ public interface Performer {
 
 	Genre getGenre();
 
-}
-
-enum Genre {
-	COUNTRY, CLASSICAL, ROCK, POP, HIP_HOP, JAZZ, FOLK
 }

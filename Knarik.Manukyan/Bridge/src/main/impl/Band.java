@@ -1,7 +1,12 @@
+package main.impl;
+
+import main.api.Genre;
+import main.api.Performer;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Band implements Performer{
+public class Band implements Performer {
 	List<Artist> artists;
 	Artist leadArtist;
 	String bandName;
