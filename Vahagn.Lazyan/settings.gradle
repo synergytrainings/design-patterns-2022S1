@@ -1,2 +1,4 @@
 rootProject.name = 'Vahagn.Lazyan'
 include 'bridge'
+include 'composite'
+
