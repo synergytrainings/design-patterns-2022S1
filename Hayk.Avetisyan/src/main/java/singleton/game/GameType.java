@@ -1,6 +1,5 @@
 package singleton.game;
 
-import org.jetbrains.annotations.Contract;
 import singleton.storage.DataStorage;
 import singleton.storage.StorageProvider;
 
@@ -11,7 +10,6 @@ public enum GameType {
 	RACE,
 	SNAKE;
 
-	@Contract(" -> new")
 	public Game game() {
 
 

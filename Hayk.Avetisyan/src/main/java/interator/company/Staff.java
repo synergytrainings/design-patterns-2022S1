@@ -4,7 +4,6 @@ import interator.Iterators.IdentifierIterator;
 import interator.Iterators.NameIterator;
 import interator.Iterators.PositionIterator;
 import interator.Iterators.SalaryIterator;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -26,7 +25,6 @@ public class Staff extends HashMap<Integer, Employee> implements Iterable<Employ
 		put(76456, new Employee("Sergey", "Adamyan", Position.Engineer, Salary.¢));
 	}
 
-	@NotNull
 	@Override
 	public Iterator<Employee> iterator() {
 		return new IdentifierIterator(this);
