@@ -17,7 +17,7 @@ public class Receptionist {
 		System.out.println("Explain Terms and Conditions");
 	}
 	
-	public HotelRoom assignToRoom() {
-		return new HotelRoom(1);
+	public void assignToRoom(HotelRoom availableRoom) {
+		System.out.println("Assigning the room");
 	}
 }

@@ -11,8 +11,9 @@ public class HotelImpl implements Hotel{
 	Queue<Receptionist> receptionists;
 	Queue<Housekeeper> housekeepers;
 	Queue<SecurityGuard> security;
+	Queue<HotelRoom> hotelRooms;
 
-	public HotelImpl(int numberOfReceptionists, int numberOfHousekeepers, int numberOfSecurityGuards) {
+	public HotelImpl(int numberOfReceptionists, int numberOfHousekeepers, int numberOfSecurityGuards, int numberOfHotelRooms) {
 		receptionists = new ArrayDeque<>(numberOfReceptionists);
 		for (int i = 0; i < numberOfReceptionists; i++) {
 			receptionists.offer(new Receptionist());
@@ -21,9 +22,13 @@ public class HotelImpl implements Hotel{
 		for (int i = 0; i < numberOfHousekeepers; i++) {
 			housekeepers.offer(new Housekeeper());
 		}
-		security = new ArrayDeque<>(numberOfHousekeepers);
+		security = new ArrayDeque<>(numberOfSecurityGuards);
 		for (int i = 0; i < numberOfHousekeepers; i++) {
 			security.offer(new SecurityGuard());
+		}
+		hotelRooms = new ArrayDeque<>(numberOfHotelRooms);
+		for (int i = 0; i < numberOfHousekeepers; i++) {
+			hotelRooms.offer(new HotelRoom(i + 1));
 		}
 	}
 
@@ -43,6 +48,11 @@ public class HotelImpl implements Hotel{
 	}
 
 	@Override
+	public HotelRoom getAvailableRoom() {
+		return hotelRooms.peek();
+	}
+
+	@Override
 	public void returnBackReceptionist(Receptionist receptionist) {
 		receptionists.offer(receptionist);
 	}
@@ -55,6 +65,11 @@ public class HotelImpl implements Hotel{
 	@Override
 	public void returnBackSecurity(SecurityGuard securityGuard) {
 		security.offer(securityGuard);
+	}
+
+	@Override
+	public void returnRoom(HotelRoom room) {
+		hotelRooms.offer(room);
 	}
 
 }

@@ -12,4 +12,7 @@ public interface Hotel {
 	void returnBackReceptionist(Receptionist receptionist);
 	void returnBackHousekeeper(Housekeeper housekeeper);
 	void returnBackSecurity(SecurityGuard securityGuard);
+	
+	HotelRoom getAvailableRoom();
+	void returnRoom(HotelRoom room);
 }

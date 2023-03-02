@@ -10,8 +10,8 @@ import main.HotelStaff.SecurityGuard;
 public class HotelFacade {
 	Hotel hotel;
 
-	HotelFacade(int numberOfReceptionists, int numberOfHousekeepers, int numberOfSecurityGuards) {
-		hotel = new HotelImpl(numberOfReceptionists, numberOfHousekeepers, numberOfSecurityGuards);
+	HotelFacade(int numberOfReceptionists, int numberOfHousekeepers, int numberOfSecurityGuards, int numberOfHotelRooms) {
+		hotel = new HotelImpl(numberOfReceptionists, numberOfHousekeepers, numberOfSecurityGuards, numberOfHotelRooms);
 	}
 
 	HotelRoom checkin() {
@@ -25,15 +25,16 @@ public class HotelFacade {
 			returnBackStaff(availableReceptionist, availableHousekeeper, availableSecurity);
 			return null;
 		}
-		HotelRoom hotelRoom = availableReceptionist.assignToRoom();
+		HotelRoom availableRoom = hotel.getAvailableRoom();
+		availableReceptionist.assignToRoom(availableRoom);
 		availableReceptionist.makePayment();
 		availableReceptionist.explainTermsAndConditions();
-		boolean isTheRoomClean = availableHousekeeper.checkIfTheRoomIsClean(hotelRoom);
+		boolean isTheRoomClean = availableHousekeeper.checkIfTheRoomIsClean(availableRoom);
 		if (!isTheRoomClean) {
-			availableHousekeeper.cleanTheRoom(hotelRoom);
+			availableHousekeeper.cleanTheRoom(availableRoom);
 		}
 		returnBackStaff(availableReceptionist, availableHousekeeper, availableSecurity);
-		return hotelRoom;
+		return availableRoom;
 	}
 
 	void checkout(HotelRoom hotelRoom) {
@@ -47,8 +48,8 @@ public class HotelFacade {
 		if(anythingBroken || anythingStolen || isPaymentDone) {
 			availableSecurity = hotel.getAvailableSecurity();
 			availableSecurity.call();
-			return;
 		}
+		hotel.returnRoom(hotelRoom);
 		availableHousekeeper.cleanTheRoom(hotelRoom);
 		availableHousekeeper.updateMiniBar(hotelRoom);
 		returnBackStaff(availableReceptionist, availableHousekeeper, availableSecurity);
